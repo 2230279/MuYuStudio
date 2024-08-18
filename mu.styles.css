@@ -1,4 +1,4 @@
-/* 重置和基礎樣式 */
+/* 重置和基础样式 */
 * {
     margin: 0;
     padding: 0;
@@ -18,16 +18,11 @@ header {
     align-items: center;
     padding: 20px 40px;
     background-color: #fff; /* 改为白色背景 */
+    max-width: 100%;
+    overflow: hidden;
 }
 
-/* 导航菜单文字颜色调整 */
-.nav-menu a {
-    text-decoration: none;
-    color: #000; /* 将文字颜色改为黑色 */
-    font-size: 16px; /* 调整字体大小 */
-}
-
-
+/* Logo 样式 */
 .logo {
     display: flex;
     justify-content: center;
@@ -36,7 +31,7 @@ header {
 }
 
 .logo img {
-    height: 250px; /* 调整Logo的高度 */
+    height: 250px; /* 调整 Logo 的高度 */
     width: auto;
     max-width: 100%;
     object-fit: contain; /* 保持图片比例并适应容器 */
@@ -51,7 +46,13 @@ header {
     right: 40px; /* 右对齐导航菜单 */
 }
 
-/* Hero部分样式 */
+.nav-menu a {
+    text-decoration: none;
+    color: #000; /* 将文字颜色改为黑色 */
+    font-size: 16px; /* 调整字体大小 */
+}
+
+/* Hero 部分样式 */
 #hero {
     text-align: center;
     padding: 100px 20px;
@@ -77,7 +78,7 @@ header {
     font-size: 16px;
 }
 
-/* About Us部分样式 */
+/* About Us 部分样式 */
 #about {
     text-align: center;
     padding: 80px 20px;
@@ -97,7 +98,7 @@ header {
     margin-right: auto;
 }
 
-/* Projects部分样式 */
+/* Projects 部分样式 */
 #projects {
     text-align: center;
     padding: 80px 20px;
@@ -127,7 +128,45 @@ header {
     border-radius: 10px;
 }
 
-/* Footer部分样式 */
+/* Lightbox 模态框样式 */
+.lightbox {
+    display: none; /* 初始状态下隐藏 */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* 半透明背景 */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer 部分样式 */
 footer {
     text-align: center;
     padding: 40px 0;
@@ -150,73 +189,44 @@ footer p {
     font-size: 14px;
 }
 
-/* Lightbox 模态框样式 */
-.lightbox {
-    display: none; /* 初始状态下隐藏 */
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* 半透明背景 */
-}
-
-/* Lightbox 模态框样式 */
-.lightbox {
-    display: none; /* 初始状态下隐藏 */
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* 半透明背景 */
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    width: 90%; /* 增大宽度 */
-    max-width: 1200px; /* 增大最大宽度 */
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
 /* 回到顶部按钮样式 */
 #backToTopBtn {
-    display: none; /* 默认隐藏 */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 99;
-    font-size: 18px;
-    background-color: transparent;
+    background-color: #444;
+    color: #fff;
     border: none;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 #backToTopBtn img {
-    width: 50px; /* 调整图片大小 */
-    height: auto;
+    width: 30px;
+    height: 30px;
+}
+
+/* 调整头部在移动端的显示 */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        height: 100px; /* 缩小 Logo 大小 */
+    }
+
+    .nav-menu {
+        display: block; /* 将导航菜单改为块状布局 */
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .nav-menu li {
+        display: inline-block;
+        margin: 5px 10px; /* 调整导航菜单的间距 */
+    }
 }
