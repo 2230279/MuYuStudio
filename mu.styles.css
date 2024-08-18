@@ -14,24 +14,19 @@ body {
 /* 修改导航栏和Logo部分样式 */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    flex-direction: column; /* 调整为列布局 */
+    align-items: center; /* 居中对齐 */
+    padding: 10px 20px;
     background-color: #fff; /* 改为白色背景 */
-    max-width: 100%;
-    overflow: hidden;
 }
 
 /* Logo 样式 */
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* 增加底部间距 */
 }
 
 .logo img {
-    height: 250px; /* 调整 Logo 的高度 */
+    height: 100px; /* 调整 Logo 的高度 */
     width: auto;
     max-width: 100%;
     object-fit: contain; /* 保持图片比例并适应容器 */
@@ -40,22 +35,23 @@ header {
 /* 导航菜单样式 */
 .nav-menu {
     display: flex;
-    gap: 55px;
+    justify-content: center;
+    flex-wrap: wrap; /* 在窄屏幕上换行 */
     list-style: none;
-    position: absolute; /* 定位导航菜单 */
-    right: 40px; /* 右对齐导航菜单 */
+    width: 100%; /* 使导航菜单占据全宽 */
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #000; /* 将文字颜色改为黑色 */
     font-size: 16px; /* 调整字体大小 */
+    margin: 5px 10px; /* 增加间距 */
 }
 
 /* Hero 部分样式 */
 #hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     background-color: #111;
 }
 
@@ -81,18 +77,18 @@ header {
 /* About Us 部分样式 */
 #about {
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     background-color: #000;
 }
 
 #about h2 {
     font-size: 28px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #about p {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -101,25 +97,25 @@ header {
 /* Projects 部分样式 */
 #projects {
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     background-color: #111;
 }
 
 #projects h2 {
     font-size: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .project-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .project-item {
-    flex: 1 1 calc(33.333% - 40px);
-    max-width: calc(33.333% - 40px);
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
 }
 
 .project-item img {
@@ -169,7 +165,7 @@ header {
 /* Footer 部分样式 */
 footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
     background-color: #000;
 }
 
@@ -210,18 +206,17 @@ footer p {
 /* 调整头部在移动端的显示 */
 @media screen and (max-width: 768px) {
     header {
+        padding: 10px 20px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .logo img {
-        height: 100px; /* 缩小 Logo 大小 */
+        height: 80px; /* 再次调整 Logo 大小 */
     }
 
     .nav-menu {
-        display: block; /* 将导航菜单改为块状布局 */
-        width: 100%;
-        text-align: center;
+        justify-content: center;
         padding-top: 10px;
     }
 
