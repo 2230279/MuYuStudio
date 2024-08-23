@@ -31,7 +31,6 @@ lightbox.onclick = function(event) {
 // 获取回到顶部按钮
 const backToTopBtn = document.getElementById('backToTopBtn');
 
-
 window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         backToTopBtn.style.display = 'block';
@@ -44,4 +43,14 @@ window.onscroll = function() {
 function scrollToTop() {
     document.body.scrollTop = 0; // 对于Safari
     document.documentElement.scrollTop = 0; // 对于Chrome、Firefox、IE和Opera
+}
+
+// 汉堡菜单切换功能
+function toggleMenu() {
+    var navMenu = document.getElementById("navMenu");
+    if (navMenu.style.display === "block") {
+        navMenu.style.display = "none";
+    } else {
+        navMenu.style.display = "block";
+    }
 }
