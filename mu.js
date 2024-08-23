@@ -44,13 +44,3 @@ function scrollToTop() {
     document.body.scrollTop = 0; // 对于Safari
     document.documentElement.scrollTop = 0; // 对于Chrome、Firefox、IE和Opera
 }
-
-// 汉堡菜单切换功能
-function toggleMenu() {
-    var navMenu = document.getElementById("navMenu");
-    if (navMenu.style.display === "block") {
-        navMenu.style.display = "none";
-    } else {
-        navMenu.style.display = "block";
-    }
-}
