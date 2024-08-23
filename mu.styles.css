@@ -1,4 +1,4 @@
-/* 重置和基础样式 */
+/* 重置和基礎樣式 */
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +27,7 @@ header {
     font-size: 16px; /* 调整字体大小 */
 }
 
+
 .logo {
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@ header {
 }
 
 .logo img {
-    height: 100px; /* 调整Logo的高度 */
+    height: 250px; /* 调整Logo的高度 */
     width: auto;
     max-width: 100%;
     object-fit: contain; /* 保持图片比例并适应容器 */
@@ -48,35 +49,6 @@ header {
     list-style: none;
     position: absolute; /* 定位导航菜单 */
     right: 40px; /* 右对齐导航菜单 */
-}
-
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-    .logo img {
-        height: 80px; /* 在较小屏幕上缩小Logo */
-    }
-    
-    .nav-menu {
-        flex-direction: column; /* 在较小屏幕上将导航栏设置为垂直方向 */
-        gap: 10px;
-        background-color: #fff;
-        position: static; /* 定位导航栏为静态 */
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .logo img {
-        height: 70px; /* 进一步缩小Logo */
-    }
-
-    .nav-menu a {
-        font-size: 14px; /* 缩小导航文字 */
-    }
 }
 
 /* Hero部分样式 */
@@ -234,25 +206,25 @@ footer p {
     height: auto;
 }
 
-/* 汉堡菜单图标样式 */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .menu-icon {
-        display: block;
+/* 小屏幕设备优化 */
+@media (max-width: 768px) {
+    .logo img {
+        height: 150px; /* 小屏幕上调整Logo的高度 */
     }
 
     .nav-menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
+        display: block; /* 垂直排列导航菜单 */
+        position: static; /* 重置导航菜单位置 */
+        text-align: center; /* 居中对齐 */
+        gap: 20px;
     }
 
-    .nav-menu.active {
-        display: flex;
+    .nav-menu a {
+        font-size: 14px; /* 小屏幕上调整字体大小 */
+    }
+
+    .project-item {
+        flex: 1 1 100%; /* 小屏幕上每行显示一个项目 */
+        max-width: 100%;
     }
 }
