@@ -378,28 +378,21 @@ footer {
 .contact-container {
     display: flex;
     width: 90%;
-    max-width: 1400px;
+    max-width: 1200px; /* 减小最大宽度 */
     margin: 0 auto;
-    height: auto; /* 移除固定高度 */
-}
-
-.contact-card,
-.contact-map {
-    flex: 1; /* 使兩個區塊均等分配空間 */
-    width: 50%; /* 確保兩個區塊寬度相等 */
+    height: auto;
 }
 
 .contact-card {
+    flex: 0 0 40%; /* 稍微增加左侧区块的宽度 */
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px 0 0 10px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .contact-map {
+    flex: 0 0 60%; /* 减小地图区域的宽度 */
     border-radius: 0 10px 10px 0;
     overflow: hidden;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
@@ -407,8 +400,50 @@ footer {
 
 .contact-map iframe {
     width: 100%;
-    height: 100%; /* 確保地圖填滿整個區塊 */
+    height: 100%;
     border: none;
+}
+
+.office-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.office-title span {
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.office-title::before,
+.office-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #000;
+}
+
+.office-title::before {
+    left: 0;
+}
+
+.office-title::after {
+    right: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    /* 保持原有的大小设置 */
 }
 
 /* 響應式設計 */
@@ -424,8 +459,12 @@ footer {
         margin-bottom: 20px;
     }
 
+    .contact-card {
+        flex: none;
+    }
+
     .contact-map iframe {
-        height: 300px; /* 在移動設備上設置固定高度 */
+        height: 300px;
     }
 }
 
@@ -751,4 +790,80 @@ h1 {
     width: 60%;
     height: 60%;
     object-fit: contain;
+}
+
+/* 响应式设计优化 */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card,
+    .contact-map {
+        width: 100%;
+        max-width: 600px; /* 限制最大宽度 */
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .contact-card {
+        flex: none;
+    }
+
+    .contact-map {
+        height: 400px; /* 设置固定高度 */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-card,
+    .contact-map {
+        max-width: 100%;
+    }
+
+    .contact-map {
+        height: 350px;
+    }
+
+    .office-title::before,
+    .office-title::after {
+        width: 25%;
+    }
+
+    .contact-item {
+        font-size: 14px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        width: 95%;
+    }
+
+    .contact-card {
+        padding: 15px;
+    }
+
+    .office-title {
+        font-size: 20px;
+    }
+
+    .contact-map {
+        height: 300px;
+    }
+
+    .contact-item {
+        font-size: 13px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
