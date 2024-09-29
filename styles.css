@@ -9,7 +9,7 @@ body {
 }
 
 body.home-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -354,14 +354,13 @@ footer {
 }
 
 .contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('images/封面2.jpg');
     padding-bottom: 9.25%; /* 16:9 比例 */
 }
 
@@ -449,19 +448,19 @@ footer {
 }
 
 .phone-icon {
-    background-image: url('images/phone-icon.png');
+    background-image: url('phone-icon.png');
 }
 
 .line-icon {
-    background-image: url('images/line-icon.png');
+    background-image: url('line-icon.png');
 }
 
 .email-icon {
-    background-image: url('images/email-icon.png');
+    background-image: url('email-icon.png');
 }
 
 .address-icon {
-    background-image: url('images/address-icon.png');
+    background-image: url('address-icon.png');
 }
 
 .contact-map {
@@ -646,7 +645,7 @@ footer {
 
 /* 關於我們頁面樣式 */
 body.about-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
