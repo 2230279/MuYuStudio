@@ -1,88 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沐語制作 Home & Design</title>
-    <link rel="stylesheet" href="mu.styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo/001.ico" type="image/x-icon">
 </head>
-<body>
+<body class="home-page">
     <header>
-        <div class="logo">
-            <img src="logo.jpg" alt="沐語制作 Logo">
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#home">首頁</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#process">設計流程</a></li>
-                <li><a href="#projects">作品欣賞</a></li>
-                <li><a href="#media">媒體報導</a></li>
-                <li><a href="#news">沐語新知</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo/logo.jpg" alt="沐語制作 Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">首頁</a></li>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="process.html">設計流程</a></li>
+                    <li><a href="#portfolio">作品欣賞</a></li>
+                    <li><a href="contact.html">聯絡我們</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-
-    <section id="hero">
-        <h1>Welcome to 沐語制作 Home & Design</h1>
-        <p>Creating Beautiful Spaces</p>
-        <a href="#services" class="btn">Our Services</a>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>設計源自人本最初始的履行</p>
-        <p>創作是對渴望最理想的實踐</p>
-        <p>給予一個場域價值！</p>
-        <p>就讓沐語の職人精神，為你琢鑄 設計 與 創作 …</p>
-        <p>形塑出你我的空間造詣。</p>
-    </section>
-
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <div class="project-gallery">
-            <div class="project-item">
-                <img src="project1.jpg" alt="Project 1" class="lightbox-trigger">
-            </div>
-            <div class="project-item">
-                <img src="project2.jpg" alt="Project 2" class="lightbox-trigger">
-            </div>
-            <div class="project-item">
-                <img src="project3.jpg" alt="Project 3" class="lightbox-trigger">
-            </div>
-            <div class="project-item">
-                <img src="project4.jpg" alt="Project 4" class="lightbox-trigger">
-            </div>
-            <div class="project-item">
-                <img src="project5.jpg" alt="Project 5" class="lightbox-trigger">
-            </div>
-            <div class="project-item">
-                <img src="project6.jpg" alt="Project 6" class="lightbox-trigger">
-            </div>
-        </div>
-    </section>
     
-    <!-- Lightbox 模态框 -->
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-image">
-    </div>
+    <main>
+        <section id="home" class="home">
+            <div class="portfolio-grid">
+                <div class="portfolio-item"><img src="images/portfolio/project1.jpg" alt="作品1"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project2.jpg" alt="作品2"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project3.jpg" alt="作品3"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project4.jpg" alt="作品4"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project5.jpg" alt="作品5"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project6.jpg" alt="作品6"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project7.jpg" alt="作品7"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project8.jpg" alt="作品8"></div>
+                <div class="portfolio-item"><img src="images/portfolio/project9.jpg" alt="作品9"></div>
+            </div>
+        </section>
 
-    <!-- 回到顶部按钮 -->
-    <button id="backToTopBtn" onclick="scrollToTop()">
-        <img src="top_button.png" alt="Back to Top">
-    </button>
-
+        <section id="about" class="about-us1">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/chief-designer.jpg" alt="沐語制作總監 - 李嘉偉">
+                    <p class="designer-name">沐語制作總監 - 李嘉偉</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>設計源自人本最初始的履行</p>
+                        <p>創作是對渴望最理想的實踐</p>
+                        <p>給予一個場域價值！</p>
+                        <p>就讓沐語の職人精神，為你琢鑄 設計 與 創作 …</p>
+                        <p>形塑出你我的空間造詣。</p>
+                    </div>
+                    <div class="read-more-container">
+                        <a href="about.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
     <footer>
-        <div class="sns-icons">
-            <a href="https://www.facebook.com/Designtohomes"><img src="facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com"><img src="instagram.png" alt="Instagram"></a>
-            <a href="https://www.twitter.com"><img src="twitter.png" alt="Twitter"></a>
-        </div>
         <p>&copy; 2024 沐語制作 Home & Design. All Rights Reserved.</p>
     </footer>
+    
+    <div class="social-icons">
+        <button id="backToTopBtn" onclick="scrollToTop()">
+            <img src="images/top_button.png" alt="Back to Top">
+        </button>
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=079neknk" target="_blank" class="social-icon line-icon">
+            <img src="images/line.png" alt="LINE">
+        </a>
+        <a href="https://www.facebook.com/Designtohomes" target="_blank" class="social-icon facebook-icon">
+            <img src="images/facebook.png" alt="Facebook">
+        </a>
+    </div>
 
-    <script src="mu.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
