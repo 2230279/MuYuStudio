@@ -354,7 +354,7 @@ footer {
 }
 
 .contact-hero {
-    background-image: rgba(0, 0, 0, 0.3)), url('封面2.jpg');
+    background-image: url('封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
