@@ -12,7 +12,7 @@ body.home-page {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;ma
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -384,7 +384,7 @@ footer {
 }
 
 .contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('封面2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 200px;
@@ -630,7 +630,7 @@ footer {
 
 /* 關於我們頁面樣式 */
 body.about-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
