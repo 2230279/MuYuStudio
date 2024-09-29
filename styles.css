@@ -50,12 +50,6 @@ body.home-page {
     image-rendering: crisp-edges;
 }
 
-.nav-icon {
-    width: 30px; /* 调整图标大小 */
-    height: 30px;
-    margin-left: 10px; /* 调整图标与logo的间距 */
-}
-
 .nav-links {
     display: flex;
     list-style-type: none;
@@ -449,19 +443,19 @@ footer {
 }
 
 .phone-icon {
-    background-image: url('phone-icon.png');
+    background-image: url('images/phone-icon.png');
 }
 
 .line-icon {
-    background-image: url('line-icon.png');
+    background-image: url('images/line-icon.png');
 }
 
 .email-icon {
-    background-image: url('email-icon.png');
+    background-image: url('images/email-icon.png');
 }
 
 .address-icon {
-    background-image: url('address-icon.png');
+    background-image: url('images/address-icon.png');
 }
 
 .contact-map {
