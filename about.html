@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 - 沐語制作 Home & Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="about-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo/logo.jpg" alt="沐語制作 Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="process.html">設計流程</a></li>
+                    <li><a href="index.html#portfolio">作品欣賞</a></li>
+                    <li><a href="contact.html">聯絡我們</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="about-main">
+        <div class="about-section">
+            <div class="tab-container">
+                <button class="tab-button" onclick="openTab(event, 'muyu-engineering')">沐語工學</button>
+                <button class="tab-button" onclick="openTab(event, 'muyu-style')">沐語風格</button>
+                <button class="tab-button" onclick="openTab(event, 'muyu-team')">沐語團隊</button>
+            </div>
+        
+            <div id="muyu-engineering" class="tab-content">
+                <h2>沐語工學</h2>
+                <p>我們將人體工程學與功能性完美融合，打造舒適實用的智能空間。每一處設計都以使用者體驗為核心，採用環保材料和節能科技，創造既宜居又環保的現代生活環境。</p>
+            </div>
+        
+            <div id="muyu-style" class="tab-content">
+                <h2>沐語風格</h2>
+                <p>簡約中見精妙，自然中覓和諧。我們將極簡主義與自然元素巧妙結合，通過光影藝術營造獨特氛圍。每個項目都是量身定制的藝術品，融合東西方美學，呈現傳統與現代的完美平衡。</p>
+            </div>
+        
+            <div id="muyu-team" class="tab-content">
+                <h2>沐語團隊</h2>
+                <p>匯聚跨領域精英，我們的團隊不斷創新、精進技藝。秉持匠心精神，團隊默契協作，從構思到實現，每一步都力求完美。我們重視與客戶的深入溝通，確保每個設計都能準確詮釋並超越客戶期望。</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 沐語制作 Home & Design. All Rights Reserved.</p>
+    </footer>
+    
+    <div class="social-icons">
+        <button id="backToTopBtn" onclick="scrollToTop()">
+            <img src="images/top_button.png" alt="Back to Top">
+        </button>
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=079neknk" target="_blank" class="social-icon line-icon">
+            <img src="images/line.png" alt="LINE">
+        </a>
+        <a href="https://www.facebook.com/Designtohomes" target="_blank" class="social-icon facebook-icon">
+            <img src="images/facebook.png" alt="Facebook">
+        </a>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
