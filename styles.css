@@ -222,8 +222,8 @@ footer {
 }
 
 .social-icon, #backToTopBtn {
-    width: 50px;
-    height: 50px;
+    width: 40px;  /* 將所有圖標的寬度統一為 40px */
+    height: 40px; /* 將所有圖標的高度統一為 40px */
     margin-bottom: 10px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.7);
@@ -232,6 +232,9 @@ footer {
     cursor: pointer;
     padding: 0;
     overflow: hidden;
+    display: flex;          /* 新增 */
+    justify-content: center; /* 新增 */
+    align-items: center;     /* 新增 */
 }
 
 .social-icon:hover, #backToTopBtn:hover {
@@ -240,19 +243,17 @@ footer {
 }
 
 .social-icon img, #backToTopBtn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 10px;
-    box-sizing: border-box;
+    width: 60%;  /* 將所有圖標內的圖片寬度統一為父元素的 60% */
+    height: 60%; /* 將所有圖標內的圖片高度統一為父元素的 60% */
+    object-fit: contain;
 }
 
 #backToTopBtn {
-    display: none;
-    margin-bottom: 10px;
+    display: none; /* 初始狀態隱藏 */
 }
 
-/* 父容器 - 確保是一個圓 */
+/* 移除這些重複的樣式 */
+/* 
 .social-icon, #backToTopBtn {
     width: 50px;
     height: 50px;
@@ -260,7 +261,6 @@ footer {
     overflow: hidden;
 }
 
-/* 圖標樣式 */
 .social-icon img, #backToTopBtn img {
     width: 100%;
     height: 100%;
@@ -268,43 +268,31 @@ footer {
     padding: 0;
     box-sizing: border-box;
 }
+*/
 
-/* 添加媒體查詢來調整移動設備上的圖標大小 */
+/* 移動設備上的樣式保持不變 */
 @media (max-width: 768px) {
     .social-icon, #backToTopBtn {
-        width: 40px;
-        height: 40px;
-    }
-
-    #backToTopBtn {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     .social-icon img, #backToTopBtn img {
         width: 60%;
         height: 60%;
-        padding: 8px;
     }
 }
 
-/* 為更小的屏幕進一步縮小圖標 */
 @media (max-width: 480px) {
     .social-icon, #backToTopBtn {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 8px;
     }
 
-    #backToTopBtn {
-        width: 35px;
-        height: 35px;
-    }
-
     .social-icon img, #backToTopBtn img {
-        width: 55%;
-        height: 55%;
-        padding: 7px;
+        width: 60%;
+        height: 60%;
     }
 }
 
@@ -384,7 +372,7 @@ footer {
 }
 
 .contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/封面2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 200px;
@@ -630,7 +618,7 @@ footer {
 
 /* 關於我們頁面樣式 */
 body.about-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
