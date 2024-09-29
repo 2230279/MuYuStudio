@@ -222,19 +222,19 @@ footer {
 }
 
 .social-icon, #backToTopBtn {
-    width: 40px;  /* 將所有圖標的寬度統一為 40px */
-    height: 40px; /* 將所有圖標的高度統一為 40px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
     margin-bottom: 10px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.7);
     transition: transform 0.3s ease, background-color 0.3s ease;
     border: none;
     cursor: pointer;
-    padding: 0;
-    overflow: hidden;
-    display: flex;          /* 新增 */
-    justify-content: center; /* 新增 */
-    align-items: center;     /* 新增 */
+    padding: 0; /* 移除内边距 */
+    overflow: hidden; /* 确保图标不会超出圆圈 */
 }
 
 .social-icon:hover, #backToTopBtn:hover {
@@ -243,57 +243,34 @@ footer {
 }
 
 .social-icon img, #backToTopBtn img {
-    width: 60%;  /* 將所有圖標內的圖片寬度統一為父元素的 60% */
-    height: 60%; /* 將所有圖標內的圖片高度統一為父元素的 60% */
-    object-fit: contain;
+    width: 100%; /* 图标宽度填满整个圆圈 */
+    height: 100%; /* 图标高度填满整个圆圈 */
+    object-fit: cover; /* 确保图片填满整个区域 */
+    padding: 10px; /* 添加内边距，使图标不会完全触及边缘 */
+    box-sizing: border-box; /* 确保内边距不会增加元素的总大小 */
 }
 
 #backToTopBtn {
-    display: none; /* 初始狀態隱藏 */
+    display: none; /* 初始状态隐藏 */
+    margin-bottom: 10px; /* 与其他图标保持一致的间距 */
 }
 
-/* 移除這些重複的樣式 */
-/* 
+/* 父容器 - 确保是一个圆 */
 .social-icon, #backToTopBtn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 50px; /* 例如，你可以根据需要调整尺寸 */
+    height: 50px; /* 确保宽高相同，形成圆形 */
+    border-radius: 50%; /* 确保是圆形 */
+    overflow: hidden; /* 防止内容溢出圆外 */
 }
 
+
+/* 图标样式 */
 .social-icon img, #backToTopBtn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 0;
-    box-sizing: border-box;
-}
-*/
-
-/* 移動設備上的樣式保持不變 */
-@media (max-width: 768px) {
-    .social-icon, #backToTopBtn {
-        width: 35px;
-        height: 35px;
-    }
-
-    .social-icon img, #backToTopBtn img {
-        width: 60%;
-        height: 60%;
-    }
-}
-
-@media (max-width: 480px) {
-    .social-icon, #backToTopBtn {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 8px;
-    }
-
-    .social-icon img, #backToTopBtn img {
-        width: 60%;
-        height: 60%;
-    }
+    width: 100%; /* 图标宽度填满父容器 */
+    height: 100%; /* 图标高度填满父容器 */
+    object-fit: cover; /* 图标完全覆盖容器，保持圆形填充 */
+    padding: 0; /* 移除内边距 */
+    box-sizing: border-box; /* 确保没有额外的内边距 */
 }
 
 /* 設計流程頁面樣式 */
@@ -400,74 +377,58 @@ footer {
 
 .contact-container {
     display: flex;
-    flex-direction: column;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    height: auto; /* 移除固定高度 */
+}
+
+.contact-card,
+.contact-map {
+    flex: 1; /* 使兩個區塊均等分配空間 */
+    width: 50%; /* 確保兩個區塊寬度相等 */
 }
 
 .contact-card {
     background-color: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.contact-card h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.contact-item {
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.contact-item i {
-    font-size: 1.5em;
-    margin-right: 15px;
-    color: #4a5568;
-}
-
-.contact-item p {
-    font-size: 1em;
-    margin: 0;
-}
-
-.contact-item a {
-    color: #4a5568;
-    text-decoration: none;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-map {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     overflow: hidden;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 768px) {
-    .contact-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .contact-card {
-        flex: 1;
-        margin-right: 30px;
-        margin-bottom: 0;
-    }
-
-    .contact-map {
-        flex: 1;
-        height: auto;
-    }
+.contact-map iframe {
+    width: 100%;
+    height: 100%; /* 確保地圖填滿整個區塊 */
+    border: none;
 }
 
 /* 響應式設計 */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-card,
+    .contact-map {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .contact-map iframe {
+        height: 300px; /* 在移動設備上設置固定高度 */
+    }
+}
+
 @media (max-width: 1200px) {
     .about-container {
         flex-direction: column;
