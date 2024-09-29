@@ -354,13 +354,14 @@ footer {
 }
 
 .contact-hero {
-    background-image: url('封面2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-size: cover;
     background-position: center;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('封面2.jpg');
     padding-bottom: 9.25%; /* 16:9 比例 */
 }
 
