@@ -912,7 +912,7 @@ h1 {
 
 .hero-content .slogan.special-font {
     font-family: 'Noto Serif TC', serif;
-    font-size: 2em; /* 增加字体大小 */
+    font-size: 1.5em; /* 增加字体大小 */
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     letter-spacing: 0.1em;
@@ -927,7 +927,7 @@ h1 {
     }
 
     .hero-content .slogan.special-font {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }
 
