@@ -30,12 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!validateForm()) {
             console.log("表單驗證失敗");
+            formMessage.style.display = 'block';
+            formMessage.textContent = '請填寫所有必填欄位。';
+            formMessage.style.color = 'red';
             return;
         }
         
         console.log("表單驗證通過，準備提交");
         const formData = new FormData(form);
         const url = 'https://docs.google.com/forms/d/e/1FAIpQLSevjVunNOVfrEPOJplpthOYQvmmeWV_wpwaF7o52MX8cf9ESw/formResponse';
+
+        formMessage.style.display = 'block';
+        formMessage.textContent = '正在提交表單，請稍候...';
+        formMessage.style.color = 'blue';
 
         fetch(url, {
             method: 'POST',
@@ -44,14 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             console.log('表單提交成功');
-            formMessage.style.display = 'block';
             formMessage.textContent = '表單提交成功！我們會盡快與您聯繫。';
             formMessage.style.color = 'green';
             form.reset();
         })
         .catch(error => {
             console.error('表單提交失敗:', error);
-            formMessage.style.display = 'block';
             formMessage.textContent = '表單提交失敗，請稍後再試。';
             formMessage.style.color = 'red';
         });
