@@ -111,22 +111,27 @@ function validateForm() {
     const requiredFields = document.querySelectorAll('[required]');
 
     requiredFields.forEach(field => {
+        let fieldIsValid = true;
         if (field.type === 'radio') {
             const radioGroup = document.querySelectorAll(`input[name="${field.name}"]`);
-            const isChecked = Array.from(radioGroup).some(radio => radio.checked);
-            if (!isChecked) {
-                isValid = false;
-            }
+            fieldIsValid = Array.from(radioGroup).some(radio => radio.checked);
         } else if (field.type === 'select-one') {
-            if (field.value === '') {
-                isValid = false;
-            }
+            fieldIsValid = field.value !== '';
         } else {
-            if (field.value.trim() === '') {
-                isValid = false;
-            }
+            fieldIsValid = field.value.trim() !== '';
+        }
+
+        if (!fieldIsValid) {
+            console.log(`Field "${field.name}" is not valid`);
+            isValid = false;
         }
     });
+
+    if (!isValid) {
+        console.log("Form validation failed");
+    } else {
+        console.log("Form validation passed");
+    }
 
     return isValid;
 }
