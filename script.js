@@ -61,19 +61,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const dateInput = document.getElementById('completion-date');
     const hiddenDateInput = document.getElementById('hidden-date');
 
-    dateInput.addEventListener('click', function() {
-        hiddenDateInput.click();
-    });
+    if (dateInput && hiddenDateInput) {
+        dateInput.addEventListener('click', function() {
+            hiddenDateInput.focus();
+            hiddenDateInput.click();
+        });
 
-    hiddenDateInput.addEventListener('change', function() {
-        const date = new Date(this.value);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        dateInput.value = `${year}/${month}/${day}`;
-    });
+        hiddenDateInput.addEventListener('change', function() {
+            const date = new Date(this.value);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            dateInput.value = `${year}/${month}/${day}`;
+        });
+    }
 
     // 移除填充縣市選項和相關事件監聽器的代碼
+
+    // 初始化 Flatpickr
+    flatpickr("#completion-date", {
+        dateFormat: "Y/m/d",
+        locale: "zh-tw",
+        disableMobile: "true"
+    });
 });
 
 // 滚动到顶部按钮功能
