@@ -110,11 +110,32 @@ function validateForm() {
     const requiredFields = document.querySelectorAll('[required]');
 
     requiredFields.forEach(field => {
-        if (field.value.trim() === '') {
-            showError(field, 'Oppos!資料還沒填');
-            isValid = false;
+        if (field.type === 'radio') {
+            // 對於單選按鈕，檢查同名的按鈕組是否有選中的
+            const radioGroup = document.querySelectorAll(`input[name="${field.name}"]`);
+            const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+            if (!isChecked) {
+                showError(field, 'Oppos!資料還沒填');
+                isValid = false;
+            } else {
+                hideError(field);
+            }
+        } else if (field.type === 'select-one') {
+            // 對於下拉選單，檢查是否選擇了非空值
+            if (field.value === '') {
+                showError(field, 'Oppos!資料還沒填');
+                isValid = false;
+            } else {
+                hideError(field);
+            }
         } else {
-            hideError(field);
+            // 對於其他輸入類型
+            if (field.value.trim() === '') {
+                showError(field, 'Oppos!資料還沒填');
+                isValid = false;
+            } else {
+                hideError(field);
+            }
         }
     });
 
