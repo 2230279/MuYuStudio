@@ -19,21 +19,109 @@ document.addEventListener('DOMContentLoaded', function() {
     if (firstTab) {
         firstTab.click();
     }
+
+    // 處理表單提交
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    // 表單提交處理
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!validateForm()) {
+            console.log("表單驗證失敗");
+            return;
+        }
+        
+        console.log("表單驗證通過，準備提交");
+        const formData = new FormData(form);
+        const url = 'https://docs.google.com/forms/d/e/1FAIpQLSevjVunNOVfrEPOJplpthOYQvmmeWV_wpwaF7o52MX8cf9ESw/formResponse';
+
+        fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        })
+        .then(response => {
+            console.log('表單提交成功');
+            formMessage.style.display = 'block';
+            formMessage.textContent = '表單提交成功！我們會盡快與您聯繫。';
+            formMessage.style.color = 'green';
+            form.reset();
+        })
+        .catch(error => {
+            console.error('表單提交失敗:', error);
+            formMessage.style.display = 'block';
+            formMessage.textContent = '表單提交失敗，請稍後再試。';
+            formMessage.style.color = 'red';
+        });
+    });
+
+    // 處理日期輸入
+    const dateInput = document.getElementById('completion-date');
+    const hiddenDateInput = document.getElementById('hidden-date');
+
+    dateInput.addEventListener('click', function() {
+        hiddenDateInput.click();
+    });
+
+    hiddenDateInput.addEventListener('change', function() {
+        const date = new Date(this.value);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        dateInput.value = `${year}/${month}/${day}`;
+    });
+
+    // 移除填充縣市選項和相關事件監聽器的代碼
 });
 
-// 获取回到顶部按钮
-const backToTopBtn = document.getElementById('backToTopBtn');
+// 滚动到顶部按钮功能
+window.onscroll = function() {scrollFunction()};
 
-window.onscroll = function() {
+function scrollFunction() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = 'block';
+        backToTopBtn.style.display = "block";
     } else {
-        backToTopBtn.style.display = 'none';
+        backToTopBtn.style.display = "none";
     }
-};
+}
 
-// 回到顶部功能
 function scrollToTop() {
-    document.body.scrollTop = 0; // 对于Safari
-    document.documentElement.scrollTop = 0; // 对于Chrome、Firefox、IE和Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// 移除 taiwanCities 對象，因為不再需要
+
+function validateForm() {
+    let isValid = true;
+    const requiredFields = document.querySelectorAll('[required]');
+
+    requiredFields.forEach(field => {
+        if (field.value.trim() === '') {
+            showError(field, 'Oppos!資料還沒填');
+            isValid = false;
+        } else {
+            hideError(field);
+        }
+    });
+
+    return isValid;
+}
+
+function showError(element, message) {
+    const errorElement = document.getElementById(`${element.id}-error`);
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+}
+
+function hideError(element) {
+    const errorElement = document.getElementById(`${element.id}-error`);
+    if (errorElement) {
+        errorElement.style.display = 'none';
+    }
 }
