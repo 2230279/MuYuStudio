@@ -349,7 +349,7 @@ footer {
 }
 
 .contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 300px; /* 增加高度 */
@@ -618,7 +618,7 @@ footer {
 
 /* 關於我們頁面樣式 */
 body.about-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -900,7 +900,7 @@ h1 {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap');
 
 .contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/封面2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('封面2.jpg');
     background-size: cover;
     background-position: center;
     height: 400px; /* 增加高度 */
