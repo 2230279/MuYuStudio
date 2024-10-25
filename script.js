@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 移除填充縣市選項和相關事件監聽器的代碼
-
     // 初始化 Flatpickr
     flatpickr("#completion-date", {
         dateFormat: "Y/m/d",
@@ -103,56 +101,27 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-// 移除 taiwanCities 對象，因為不再需要
-
 function validateForm() {
     let isValid = true;
     const requiredFields = document.querySelectorAll('[required]');
 
     requiredFields.forEach(field => {
         if (field.type === 'radio') {
-            // 對於單選按鈕，檢查同名的按鈕組是否有選中的
             const radioGroup = document.querySelectorAll(`input[name="${field.name}"]`);
             const isChecked = Array.from(radioGroup).some(radio => radio.checked);
             if (!isChecked) {
-                showError(field, 'Oppos!資料還沒填');
                 isValid = false;
-            } else {
-                hideError(field);
             }
         } else if (field.type === 'select-one') {
-            // 對於下拉選單，檢查是否選擇了非空值
             if (field.value === '') {
-                showError(field, 'Oppos!資料還沒填');
                 isValid = false;
-            } else {
-                hideError(field);
             }
         } else {
-            // 對於其他輸入類型
             if (field.value.trim() === '') {
-                showError(field, 'Oppos!資料還沒填');
                 isValid = false;
-            } else {
-                hideError(field);
             }
         }
     });
 
     return isValid;
-}
-
-function showError(element, message) {
-    const errorElement = document.getElementById(`${element.id}-error`);
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-}
-
-function hideError(element) {
-    const errorElement = document.getElementById(`${element.id}-error`);
-    if (errorElement) {
-        errorElement.style.display = 'none';
-    }
 }
