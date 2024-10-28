@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         console.log("表單驗證通過，準備提交");
-        const formData = new FormData(form);
+        const formData = new FormData(form);  // 這樣就足夠了，因為 HTML 中已經設置了正確的 entry.xxx
+
         const url = 'https://docs.google.com/forms/d/e/1FAIpQLSevjVunNOVfrEPOJplpthOYQvmmeWV_wpwaF7o52MX8cf9ESw/formResponse';
 
         formMessage.style.display = 'block';
