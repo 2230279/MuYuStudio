@@ -37,10 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         console.log("表單驗證通過，準備提交");
-        const formData = new FormData(form);  // 這樣就足夠了，因為 HTML 中已經設置了正確的 entry.xxx
+        const formData = new FormData(form);
+
+        // 確保「想說的話」欄位正確映射
+        const messageField = document.querySelector('[name="entry.273793141"]');
+        if (messageField) {
+            formData.set('entry.273793141', messageField.value);
+        }
+
+        // 在提交前，讓我們檢查並打印所有要提交的數據
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
 
         const url = 'https://docs.google.com/forms/d/e/1FAIpQLSevjVunNOVfrEPOJplpthOYQvmmeWV_wpwaF7o52MX8cf9ESw/formResponse';
-
+        
+        // 使用fetch提交前，確保所有數據都正確映射
         formMessage.style.display = 'block';
         formMessage.textContent = '正在提交表單，請稍候...';
         formMessage.style.color = 'blue';
@@ -136,4 +148,3 @@ function validateForm() {
 
     return isValid;
 }
-
