@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化 Flatpickr
     flatpickr("#completion-date", {
         dateFormat: "Y/m/d",
-        locale: "zh-tw",
+        locale: "zh_tw",
         disableMobile: "true"
     });
 });
