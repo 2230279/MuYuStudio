@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetch(url, {
             method: 'POST',
-            mode: 'no-cors',
             body: formData
         })
         .then(response => {
@@ -70,7 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('表單提交失敗:', error);
-            formMessage.textContent = '表單提交失敗，請稍後再試。';
+            let errorMessage;
+            if (error instanceof TypeError) {
+                errorMessage = '網絡連接失敗，請檢查您的網絡並稍後再試。';
+            } else {
+                errorMessage = '表單提交失敗，請稍後再試。';
+            }
+            formMessage.textContent = errorMessage;
             formMessage.style.color = 'red';
         });
     });
@@ -148,4 +153,3 @@ function validateForm() {
 
     return isValid;
 }
-
